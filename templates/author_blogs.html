@@ -11,13 +11,6 @@
             {% for blog in blogs %}
             <div> <a href='/blog?id={{blog.id}}' style="color:black"><h1>{{blog.title}}</h1></a>
                 <p>{{blog.body}}</p>
-                <form method="POST" action="/deletarate" style="display:inline-block;">
-
-                    <input type="hidden" name="blog-id" value="{{blog.id}}" />
-                    <input type="submit" value="delete" />
-                    
-                </form>
-                <hr>
             </div>
             {% endfor %}
 

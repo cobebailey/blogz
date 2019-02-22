@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<a href='/'>What's on your mind? Add a Blog!</a>
+<a href='/blogs'>Blog Compendium</a>
+<a href='/userlibrary'>User Library</a>
+<a href='/logout'>Logout</a>
+    {% if users|length == 0 %}
+    <p>No authors to look through.</p>
+    {% else %}
+
+            {% for user in users %}
+            <div> <a href='/author_blogs?owner={{user.id}}' style="color:black"><h1>{{user.username}}</h1></a>
+                
+                <hr>
+            </div>
+            {% endfor %}
+
+
+    {% endif %}
+{% endblock %}
